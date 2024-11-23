@@ -10,7 +10,6 @@ import com.example.temp.ui.theme.TempTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
             TempTheme {
                 App()

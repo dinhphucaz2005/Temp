@@ -58,42 +58,6 @@ fun ItemScreen() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            DockedSearchBar(
-                inputField = {
-                    MyTextField(value = searchBarText,
-                        onValueChange = { searchBarText = it },
-                        modifier = Modifier.fillMaxWidth(),
-                        placeholder = {
-                            Text(
-                                "Tìm kiếm", style = MaterialTheme.typography.titleMedium
-                            )
-                        })
-                },
-                expanded = false,
-                onExpandedChange = {},
-                modifier = Modifier.weight(1f)
-            ) {}
-
-            Icon(
-                painter = painterResource(R.drawable.ic_bell),
-                contentDescription = null,
-                modifier = Modifier
-                    .size(40.dp)
-                    .padding(horizontal = 4.dp)
-            )
-
-            Icon(
-                painter = painterResource(R.drawable.ic_off),
-                contentDescription = null,
-                modifier = Modifier
-                    .size(40.dp)
-                    .padding(horizontal = 4.dp)
-            )
-        }
 
         LazyColumn(
             modifier = Modifier

@@ -1,6 +1,7 @@
 package com.example.temp.ui.screen
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -139,8 +140,7 @@ fun LoginScreen(navController: NavHostController) {
             value = phoneNumber,
             placeholder = {
                 Text(
-                    "Nhập số điện thoại",
-                    style = MaterialTheme.typography.titleSmall
+                    "Nhập số điện thoại", style = MaterialTheme.typography.titleSmall
                 )
             },
             onValueChange = { phoneNumber = it },
@@ -155,8 +155,7 @@ fun LoginScreen(navController: NavHostController) {
             value = password,
             placeholder = {
                 Text(
-                    "Nhập mật khẩu",
-                    style = MaterialTheme.typography.titleSmall
+                    "Nhập mật khẩu", style = MaterialTheme.typography.titleSmall
                 )
             },
             onValueChange = { password = it },
@@ -164,13 +163,21 @@ fun LoginScreen(navController: NavHostController) {
                 .fillMaxWidth()
                 .wrapContentHeight()
         )
-
         Button(
             onClick = { navController.navigate(Route.MAIN.name) },
             modifier = Modifier
+                .padding(horizontal = 40.dp)
+                .fillMaxWidth()
         ) {
             Text("Đăng nhập", style = MaterialTheme.typography.titleSmall)
         }
+
+        Text(
+            text = "Chưa có tài khoản? Đăng ký ngay",
+            style = MaterialTheme.typography.titleSmall.copy(fontSize = 16.sp),
+            modifier = Modifier
+                .clickable { navController.navigate(Route.REGISTER.name) }
+        )
 
         Row(
             modifier = Modifier
